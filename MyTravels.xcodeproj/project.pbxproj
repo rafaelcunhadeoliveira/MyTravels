@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531BCC552189FBAC00E0BFBB /* MKMapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BCC542189FBAC00E0BFBB /* MKMapExtension.swift */; };
+		531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */; };
 		9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */; };
 		9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */; };
 		9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADEC1721891B0000E0D636 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531BCC542189FBAC00E0BFBB /* MKMapExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapExtension.swift; sourceTree = "<group>"; };
+		531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationImagesViewController.swift; sourceTree = "<group>"; };
 		9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9EADEC1421891B0000E0D636 /* MyTravels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTravels.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		531BCC532189FB7F00E0BFBB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EADEC4D2189248500E0D636 /* ViewControllerExtension.swift */,
+				531BCC542189FBAC00E0BFBB /* MKMapExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9E27AD0721895BC400FFC5D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */,
+				531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,8 +191,8 @@
 		9EADEC4A21891C7800E0D636 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				531BCC532189FB7F00E0BFBB /* Extensions */,
 				9EADEC2121891B0300E0D636 /* Assets.xcassets */,
-				9EADEC4D2189248500E0D636 /* ViewControllerExtension.swift */,
 				9EADEC4B21891C9F00E0D636 /* Loading.swift */,
 				9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */,
 			);
@@ -317,11 +331,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */,
+				531BCC552189FBAC00E0BFBB /* MKMapExtension.swift in Sources */,
 				9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */,
 				9EADEC2021891B0000E0D636 /* MyTravels.xcdatamodeld in Sources */,
 				9EADEC4C21891C9F00E0D636 /* Loading.swift in Sources */,
 				9EADEC4E2189248500E0D636 /* ViewControllerExtension.swift in Sources */,
 				9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */,
+				531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,13 +513,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YH7K6PQM2C;
+				DEVELOPMENT_TEAM = HD7HJ37Q3Q;
 				INFOPLIST_FILE = MyTravels/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rco.MyTravels;
+				PRODUCT_BUNDLE_IDENTIFIER = rco.MyTravels123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -515,13 +531,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YH7K6PQM2C;
+				DEVELOPMENT_TEAM = HD7HJ37Q3Q;
 				INFOPLIST_FILE = MyTravels/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rco.MyTravels;
+				PRODUCT_BUNDLE_IDENTIFIER = rco.MyTravels123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
