@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 public class Loading {
-    var overView = UIView()
-    var load = UIActivityIndicatorView()
+    private var overView = UIView()
+    private var load = UIActivityIndicatorView()
 
     class var shared: Loading {
         struct Static {

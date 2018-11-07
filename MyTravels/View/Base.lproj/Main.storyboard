@@ -85,22 +85,40 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="06b-Xs-XzV">
                                 <rect key="frame" x="0.0" y="187" width="375" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ujZ-2r-SiB">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="ujZ-2r-SiB">
+                                    <size key="itemSize" width="127" height="105"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xlU-6H-WgV">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LocationCollectionViewCell" id="xlU-6H-WgV" customClass="LocationCollectionViewCell" customModule="MyTravels">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="127" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSy-pH-09Y">
+                                                    <rect key="frame" x="10" y="10" width="107" height="85"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="JSy-pH-09Y" firstAttribute="top" secondItem="xlU-6H-WgV" secondAttribute="top" constant="10" id="ANV-Cy-F70"/>
+                                            <constraint firstAttribute="bottom" secondItem="JSy-pH-09Y" secondAttribute="bottom" constant="10" id="Ung-eY-C5f"/>
+                                            <constraint firstItem="JSy-pH-09Y" firstAttribute="leading" secondItem="xlU-6H-WgV" secondAttribute="leading" constant="10" id="ejq-qZ-VM2"/>
+                                            <constraint firstAttribute="trailing" secondItem="JSy-pH-09Y" secondAttribute="trailing" constant="10" id="keH-95-B7f"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="JSy-pH-09Y" id="LuI-Hn-eEQ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="lVh-8x-pBS" id="86w-5p-F6D"/>
+                                    <outlet property="delegate" destination="lVh-8x-pBS" id="kn0-P5-KBZ"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBT-XZ-uSD">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
@@ -108,6 +126,9 @@
                                     <constraint firstAttribute="height" constant="40" id="4aB-J8-qhi"/>
                                 </constraints>
                                 <state key="normal" title="New Collection"/>
+                                <connections>
+                                    <action selector="newCollectionButton:" destination="lVh-8x-pBS" eventType="touchUpInside" id="fHV-eK-hDi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,6 +147,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a8j-PN-3MM"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="06b-Xs-XzV" id="wPb-NH-T5U"/>
+                        <outlet property="topImage" destination="iBO-ei-16y" id="8ad-Ng-X8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtY-5R-Zn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
