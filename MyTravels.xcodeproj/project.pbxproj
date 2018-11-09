@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		53175027218B9E7D002A87FB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53175026218B9E7D002A87FB /* LocationCollectionViewCell.swift */; };
 		531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */; };
+		537C76622195FACB00451965 /* FlickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C76612195FACB00451965 /* FlickerService.swift */; };
+		53A1F1A6219377D70024BDD1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1A5219377D70024BDD1 /* ServiceManager.swift */; };
+		53A1F1AC21937C520024BDD1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1A721937C520024BDD1 /* Enums.swift */; };
+		53A1F1AD21937C520024BDD1 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1A821937C520024BDD1 /* URLFactory.swift */; };
+		53A1F1AE21937C520024BDD1 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1A921937C520024BDD1 /* EnvironmentVariables.swift */; };
+		53A1F1AF21937C520024BDD1 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1AA21937C520024BDD1 /* JSONResponse.swift */; };
+		53A1F1B021937C520024BDD1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1AB21937C520024BDD1 /* ServiceError.swift */; };
 		9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */; };
 		9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */; };
 		9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADEC1721891B0000E0D636 /* AppDelegate.swift */; };
@@ -42,6 +49,13 @@
 /* Begin PBXFileReference section */
 		53175026218B9E7D002A87FB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationImagesViewController.swift; sourceTree = "<group>"; };
+		537C76612195FACB00451965 /* FlickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerService.swift; sourceTree = "<group>"; };
+		53A1F1A5219377D70024BDD1 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		53A1F1A721937C520024BDD1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		53A1F1A821937C520024BDD1 /* URLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
+		53A1F1A921937C520024BDD1 /* EnvironmentVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
+		53A1F1AA21937C520024BDD1 /* JSONResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
+		53A1F1AB21937C520024BDD1 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9EADEC1421891B0000E0D636 /* MyTravels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTravels.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +116,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		53A1F1A4219377BF0024BDD1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				53A1F1A5219377D70024BDD1 /* ServiceManager.swift */,
+				537C76612195FACB00451965 /* FlickerService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		9E27AD0721895BC400FFC5D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +139,7 @@
 		9E27AD0821895C4C00FFC5D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				53A1F1A4219377BF0024BDD1 /* Service */,
 				9E27AD0921895C6000FFC5D2 /* Database */,
 			);
 			path = Controller;
@@ -199,6 +223,11 @@
 		9EADEC4A21891C7800E0D636 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53A1F1A821937C520024BDD1 /* URLFactory.swift */,
+				53A1F1A721937C520024BDD1 /* Enums.swift */,
+				53A1F1A921937C520024BDD1 /* EnvironmentVariables.swift */,
+				53A1F1AA21937C520024BDD1 /* JSONResponse.swift */,
+				53A1F1AB21937C520024BDD1 /* ServiceError.swift */,
 				531BCC532189FB7F00E0BFBB /* Extensions */,
 				9EADEC2121891B0300E0D636 /* Assets.xcassets */,
 				9EADEC4B21891C9F00E0D636 /* Loading.swift */,
@@ -339,13 +368,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */,
+				53A1F1AD21937C520024BDD1 /* URLFactory.swift in Sources */,
 				9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */,
+				53A1F1AC21937C520024BDD1 /* Enums.swift in Sources */,
 				9EADEC2021891B0000E0D636 /* MyTravels.xcdatamodeld in Sources */,
 				9EADEC4C21891C9F00E0D636 /* Loading.swift in Sources */,
 				53175027218B9E7D002A87FB /* LocationCollectionViewCell.swift in Sources */,
+				53A1F1A6219377D70024BDD1 /* ServiceManager.swift in Sources */,
 				9EADEC4E2189248500E0D636 /* ViewControllerExtension.swift in Sources */,
 				9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */,
 				531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */,
+				53A1F1AE21937C520024BDD1 /* EnvironmentVariables.swift in Sources */,
+				537C76622195FACB00451965 /* FlickerService.swift in Sources */,
+				53A1F1B021937C520024BDD1 /* ServiceError.swift in Sources */,
+				53A1F1AF21937C520024BDD1 /* JSONResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
