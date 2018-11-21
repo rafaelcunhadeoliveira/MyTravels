@@ -18,9 +18,14 @@
 		53A1F1B021937C520024BDD1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1AB21937C520024BDD1 /* ServiceError.swift */; };
 		9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */; };
 		9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */; };
+		9E3801E321A4A3C2001870FA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E3801DC21A4A3C1001870FA /* Model.xcdatamodeld */; };
+		9E3801E421A4A3C2001870FA /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3801DE21A4A3C1001870FA /* Map.swift */; };
+		9E3801E521A4A3C2001870FA /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3801DF21A4A3C1001870FA /* Photo+CoreDataProperties.swift */; };
+		9E3801E621A4A3C2001870FA /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3801E021A4A3C1001870FA /* Pin+CoreDataClass.swift */; };
+		9E3801E721A4A3C2001870FA /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3801E121A4A3C1001870FA /* Pin+CoreDataProperties.swift */; };
+		9E3801E821A4A3C2001870FA /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3801E221A4A3C2001870FA /* Photo+CoreDataClass.swift */; };
 		9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADEC1721891B0000E0D636 /* AppDelegate.swift */; };
 		9EADEC1D21891B0000E0D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EADEC1B21891B0000E0D636 /* Main.storyboard */; };
-		9EADEC2021891B0000E0D636 /* MyTravels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EADEC1E21891B0000E0D636 /* MyTravels.xcdatamodeld */; };
 		9EADEC2221891B0300E0D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EADEC2121891B0300E0D636 /* Assets.xcassets */; };
 		9EADEC2521891B0300E0D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EADEC2321891B0300E0D636 /* LaunchScreen.storyboard */; };
 		9EADEC3021891B0300E0D636 /* MyTravelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADEC2F21891B0300E0D636 /* MyTravelsTests.swift */; };
@@ -58,10 +63,15 @@
 		53A1F1AB21937C520024BDD1 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		9E27AD0521894C3C00FFC5D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9E3801DD21A4A3C1001870FA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9E3801DE21A4A3C1001870FA /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		9E3801DF21A4A3C1001870FA /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9E3801E021A4A3C1001870FA /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9E3801E121A4A3C1001870FA /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9E3801E221A4A3C2001870FA /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9EADEC1421891B0000E0D636 /* MyTravels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTravels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EADEC1721891B0000E0D636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EADEC1C21891B0000E0D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9EADEC1F21891B0000E0D636 /* MyTravels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTravels.xcdatamodel; sourceTree = "<group>"; };
 		9EADEC2121891B0300E0D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EADEC2421891B0300E0D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EADEC2621891B0300E0D636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,17 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				53A1F1A4219377BF0024BDD1 /* Service */,
-				9E27AD0921895C6000FFC5D2 /* Database */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9E27AD0921895C6000FFC5D2 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				9EADEC1E21891B0000E0D636 /* MyTravels.xcdatamodeld */,
-			);
-			path = Database;
 			sourceTree = "<group>";
 		};
 		9E27AD0A21895CBD00FFC5D2 /* ViewControllers */ = {
@@ -223,6 +224,12 @@
 		9EADEC4A21891C7800E0D636 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E3801DE21A4A3C1001870FA /* Map.swift */,
+				9E3801DC21A4A3C1001870FA /* Model.xcdatamodeld */,
+				9E3801E221A4A3C2001870FA /* Photo+CoreDataClass.swift */,
+				9E3801DF21A4A3C1001870FA /* Photo+CoreDataProperties.swift */,
+				9E3801E021A4A3C1001870FA /* Pin+CoreDataClass.swift */,
+				9E3801E121A4A3C1001870FA /* Pin+CoreDataProperties.swift */,
 				53A1F1A821937C520024BDD1 /* URLFactory.swift */,
 				53A1F1A721937C520024BDD1 /* Enums.swift */,
 				53A1F1A921937C520024BDD1 /* EnvironmentVariables.swift */,
@@ -369,12 +376,17 @@
 			files = (
 				9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */,
 				53A1F1AD21937C520024BDD1 /* URLFactory.swift in Sources */,
+				9E3801E421A4A3C2001870FA /* Map.swift in Sources */,
+				9E3801E321A4A3C2001870FA /* Model.xcdatamodeld in Sources */,
 				9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */,
+				9E3801E521A4A3C2001870FA /* Photo+CoreDataProperties.swift in Sources */,
 				53A1F1AC21937C520024BDD1 /* Enums.swift in Sources */,
-				9EADEC2021891B0000E0D636 /* MyTravels.xcdatamodeld in Sources */,
 				9EADEC4C21891C9F00E0D636 /* Loading.swift in Sources */,
 				53175027218B9E7D002A87FB /* LocationCollectionViewCell.swift in Sources */,
+				9E3801E621A4A3C2001870FA /* Pin+CoreDataClass.swift in Sources */,
+				9E3801E821A4A3C2001870FA /* Photo+CoreDataClass.swift in Sources */,
 				53A1F1A6219377D70024BDD1 /* ServiceManager.swift in Sources */,
+				9E3801E721A4A3C2001870FA /* Pin+CoreDataProperties.swift in Sources */,
 				9EADEC4E2189248500E0D636 /* ViewControllerExtension.swift in Sources */,
 				9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */,
 				531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */,
@@ -708,13 +720,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9EADEC1E21891B0000E0D636 /* MyTravels.xcdatamodeld */ = {
+		9E3801DC21A4A3C1001870FA /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9EADEC1F21891B0000E0D636 /* MyTravels.xcdatamodel */,
+				9E3801DD21A4A3C1001870FA /* Model.xcdatamodel */,
 			);
-			currentVersion = 9EADEC1F21891B0000E0D636 /* MyTravels.xcdatamodel */;
-			path = MyTravels.xcdatamodeld;
+			currentVersion = 9E3801DD21A4A3C1001870FA /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
