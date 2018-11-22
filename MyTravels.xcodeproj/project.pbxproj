@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530CC56C21A75ECD00E1BCE0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530CC56B21A75ECD00E1BCE0 /* CoreDataStack.swift */; };
 		53175027218B9E7D002A87FB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53175026218B9E7D002A87FB /* LocationCollectionViewCell.swift */; };
 		531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */; };
 		537C76622195FACB00451965 /* FlickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C76612195FACB00451965 /* FlickerService.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		530CC56B21A75ECD00E1BCE0 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		53175026218B9E7D002A87FB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationImagesViewController.swift; sourceTree = "<group>"; };
 		537C76612195FACB00451965 /* FlickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		530CC56A21A75ECD00E1BCE0 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				530CC56B21A75ECD00E1BCE0 /* CoreDataStack.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		53175023218B9DE3002A87FB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		9E27AD0821895C4C00FFC5D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				530CC56A21A75ECD00E1BCE0 /* Database */,
 				53A1F1A4219377BF0024BDD1 /* Service */,
 			);
 			path = Controller;
@@ -374,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530CC56C21A75ECD00E1BCE0 /* CoreDataStack.swift in Sources */,
 				9E27AD0621894C3C00FFC5D2 /* AlertHelper.swift in Sources */,
 				53A1F1AD21937C520024BDD1 /* URLFactory.swift in Sources */,
 				9E3801E421A4A3C2001870FA /* Map.swift in Sources */,

@@ -12,6 +12,7 @@ class LocationImagesViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var topImage: UIImageView!
+    let photosList = [Photo]()
 
     var delegate: UICollectionViewDelegateFlowLayout?
     

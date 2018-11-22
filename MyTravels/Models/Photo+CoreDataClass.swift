@@ -32,7 +32,7 @@ public class Photo: NSManagedObject {
         
         isDownloading = true
         
-        FlickrService.sharedInstance().downloadPhoto(photoUrl: url) { (data, response, error) in
+        FlickerService.sharedInstance().downloadPhoto(photoUrl: url) { (data, response, error) in
             
             guard let imgData = data, let image =  UIImage(data: imgData) else {
                 return
