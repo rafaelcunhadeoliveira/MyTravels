@@ -19,3 +19,6 @@ enum FlickerMethods: String {
     case photoInfo = "flickr.photos.getInfo"
     case photosByLocation = "flickr.photos.getRecent"
 }
+enum DialogType: String {
+    case deletePhoto = "Are you sure you want to delete this image?"
+}

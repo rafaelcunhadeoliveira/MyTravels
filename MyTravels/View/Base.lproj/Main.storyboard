@@ -79,11 +79,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-ei-16y">
-                                <rect key="frame" x="0.0" y="20" width="375" height="167"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="06b-Xs-XzV">
-                                <rect key="frame" x="0.0" y="187" width="375" height="440"/>
+                                <rect key="frame" x="0.0" y="189" width="375" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="ujZ-2r-SiB">
                                     <size key="itemSize" width="127" height="105"/>
@@ -130,17 +127,22 @@
                                     <action selector="newCollectionButton:" destination="lVh-8x-pBS" eventType="touchUpInside" id="fHV-eK-hDi"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JW7-ny-SMr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="GZ0-Ac-Vnz"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="a8j-PN-3MM" firstAttribute="trailing" secondItem="06b-Xs-XzV" secondAttribute="trailing" id="7C7-fd-71V"/>
                             <constraint firstItem="06b-Xs-XzV" firstAttribute="leading" secondItem="a8j-PN-3MM" secondAttribute="leading" id="BsU-oY-hAH"/>
-                            <constraint firstItem="iBO-ei-16y" firstAttribute="leading" secondItem="a8j-PN-3MM" secondAttribute="leading" id="CeJ-uD-446"/>
                             <constraint firstItem="eBT-XZ-uSD" firstAttribute="leading" secondItem="a8j-PN-3MM" secondAttribute="leading" id="Fbi-2M-JeX"/>
-                            <constraint firstItem="06b-Xs-XzV" firstAttribute="top" secondItem="iBO-ei-16y" secondAttribute="bottom" id="Hi8-F5-65I"/>
-                            <constraint firstItem="iBO-ei-16y" firstAttribute="top" secondItem="a8j-PN-3MM" secondAttribute="top" id="RJj-Ko-Q2G"/>
-                            <constraint firstItem="iBO-ei-16y" firstAttribute="trailing" secondItem="a8j-PN-3MM" secondAttribute="trailing" id="Rxo-kE-PCb"/>
-                            <constraint firstItem="iBO-ei-16y" firstAttribute="height" secondItem="0Wy-T3-cco" secondAttribute="height" multiplier="0.25" id="SPj-7b-5MJ"/>
+                            <constraint firstItem="JW7-ny-SMr" firstAttribute="top" secondItem="a8j-PN-3MM" secondAttribute="top" id="HkN-o9-RtM"/>
+                            <constraint firstItem="JW7-ny-SMr" firstAttribute="trailing" secondItem="a8j-PN-3MM" secondAttribute="trailing" id="NtW-n8-B05"/>
+                            <constraint firstItem="JW7-ny-SMr" firstAttribute="leading" secondItem="a8j-PN-3MM" secondAttribute="leading" id="Xbt-NK-n1S"/>
+                            <constraint firstItem="06b-Xs-XzV" firstAttribute="top" secondItem="JW7-ny-SMr" secondAttribute="bottom" constant="10" id="fI6-hk-dIg"/>
                             <constraint firstItem="eBT-XZ-uSD" firstAttribute="bottom" secondItem="a8j-PN-3MM" secondAttribute="bottom" id="oMg-VX-hQy"/>
                             <constraint firstItem="a8j-PN-3MM" firstAttribute="trailing" secondItem="eBT-XZ-uSD" secondAttribute="trailing" id="tdc-ax-CKV"/>
                             <constraint firstItem="eBT-XZ-uSD" firstAttribute="top" secondItem="06b-Xs-XzV" secondAttribute="bottom" id="ygN-BZ-nDU"/>
@@ -149,7 +151,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="06b-Xs-XzV" id="wPb-NH-T5U"/>
-                        <outlet property="topImage" destination="iBO-ei-16y" id="8ad-Ng-X8o"/>
+                        <outlet property="topImage" destination="JW7-ny-SMr" id="lnP-Am-kSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtY-5R-Zn5" userLabel="First Responder" sceneMemberID="firstResponder"/>

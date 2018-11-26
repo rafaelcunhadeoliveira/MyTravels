@@ -14,81 +14,58 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var editingView: UIView!
     @IBOutlet weak var map: MKMapView!
-    var context = NSManagedObjectContext()
     let entityName = "Pin"
     var savedPins: [NSManagedObject] = []
+    var pins = [Pin]()
     
 
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configPinWhenTouch()
-        self.setUpCoreData()
+        loadLocations()
+        loadLastRegion()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.isEditing = false
         editingView.isHidden = true
-        getData()
     }
 
-    // MARK: - Core Data
-
-    func setUpCoreData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        context = appDelegate.persistentContainer.viewContext
-    }
-
-    func createNewPin(coordinate: CLLocationCoordinate2D, name: String) -> NSManagedObject {
-        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
-            else { return NSManagedObject() }
-        let newPin = NSManagedObject(entity: entity, insertInto: context)
-        let latitude = Double(coordinate.latitude)
-        let longitude = Double(coordinate.longitude)
-        newPin.setValue(latitude, forKey: "latitude")
-        newPin.setValue(longitude, forKey: "longitude")
-        newPin.setValue(name, forKey: "name")
-        return newPin
-    }
-
-    func saveData(newPin: NSManagedObject) {
+    func loadLocations() {
+        var annotations = [MKAnnotation]()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
+        
         do {
-            try context.save()
+            let results = try CoreDataStack.sharedInstance?.context.fetch(fetchRequest)
+            pins.append(contentsOf: (results as! [Pin]))
         } catch {
-            AlertHelper.shared.showBasicDialog(error: "Error saving the pin")
+            return
         }
+        
+        for pin in pins {
+            let annotation = PinPointAnnotation()
+            annotation.pin = pin
+            annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(pin.latitude),longitude: CLLocationDegrees(pin.longitude))
+            annotations.append(annotation)
+        }
+        
+        map.addAnnotations(annotations)
+        
+        
     }
-
-    func getData() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            guard let objs = result as? [NSManagedObject] else { return }
-            self.savedPins = objs
-            for data in objs {
-                let coordinate = buildLocation2d(data: data)
-                guard let name = data.value(forKey: "name") as? String
-                    else { return }
-                addAnnotation(coordinate: coordinate, name: name)
-            }
-        } catch {
-            AlertHelper.shared.showBasicDialog(error: "Cannot fetch data")
+    
+    func loadLastRegion() {
+        
+        if Map.latitude == 0 && Map.longitude == 0 && Map.latitudeDelta == 0 && Map.longitudeDelta == 0 {
+            return
         }
-    }
-
-    func removeObj(view: MKAnnotationView) {
-        let latitude = Double(view.annotation?.coordinate.latitude ?? 0)
-        let longitude = Double(view.annotation?.coordinate.longitude ?? 0)
-        for obj in savedPins {
-            if let objLatitude = obj.value(forKey: "latitude") as? Double,
-                let objLongitude = obj.value(forKey: "longitude") as? Double{
-                if objLatitude == latitude && objLongitude == longitude {
-                    context.delete(obj)
-                }
-            }
-        }
+        
+        let center = CLLocationCoordinate2D(latitude: Map.latitude, longitude: Map.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: Map.latitudeDelta, longitudeDelta: Map.longitudeDelta)
+        
+        map.setRegion(MKCoordinateRegion(center: center, span: span), animated: false)
     }
 
     // MARK: - methods
@@ -109,9 +86,22 @@ class MapViewController: UIViewController {
     }
 
     func addAnnotation(coordinate: CLLocationCoordinate2D, name: String) {
-        let annotation = MKPointAnnotation()
+        
+        let annotation = PinPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = name
+        
+        map.addAnnotation(annotation)
+        
+        let pin = Pin(context: CoreDataStack.sharedInstance!.context)
+        pin.latitude = annotation.coordinate.latitude
+        pin.longitude = annotation.coordinate.longitude
+        
+        annotation.pin = pin
+        
+        DispatchQueue.main.async {
+            CoreDataStack.sharedInstance?.save()
+        }
+        annotation.coordinate = coordinate
         map.addAnnotation(annotation)
     }
 
@@ -125,8 +115,6 @@ class MapViewController: UIViewController {
                     AlertHelper.shared.showBasicDialog(error: "Error searching location")
                     return
             }
-            let pin = self.createNewPin(coordinate: coordinate, name: name)
-            self.saveData(newPin: pin)
             self.addAnnotation(coordinate: coordinate, name: name)
         })
     }
@@ -150,11 +138,18 @@ class MapViewController: UIViewController {
 extension MapViewController : MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if isEditing {
-            self.removeObj(view: view)
             view.removeFromSuperview()
         } else {
-            let viewController = UIStoryboard(name: "Main",
-                                              bundle: nil).instantiateViewController(withIdentifier: "LocationImagesViewController")
+            guard let viewController = UIStoryboard(name: "Main",
+                                                    bundle: nil).instantiateViewController(
+                                                        withIdentifier: "LocationImagesViewController")
+                as? LocationImagesViewController else { return }
+            
+            guard mapView.selectedAnnotations.count > 0,
+                let pin = mapView.selectedAnnotations[0] as? PinPointAnnotation else {
+                return
+            }
+            viewController.pointPin = pin
             if let navigator = navigationController {
                 navigator.pushViewController(viewController, animated: true)
             }

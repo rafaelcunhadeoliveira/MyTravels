@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  Photo+CoreDataClass.swift
 //  OnTheMap
 //
 //  Created by Rafael Cunha on 26/09/2018.
@@ -32,8 +32,7 @@ public class Photo: NSManagedObject {
         
         isDownloading = true
         
-        FlickerService.sharedInstance().downloadPhoto(photoUrl: url) { (data, response, error) in
-            
+        FlickerService.sharedInstance().downloadPhoto(photoUrl: url, success: {(data) in
             guard let imgData = data, let image =  UIImage(data: imgData) else {
                 return
             }
@@ -47,8 +46,6 @@ public class Photo: NSManagedObject {
                 
                 CoreDataStack.sharedInstance?.save()
             }
-        }
-        
+        }, failure: {_ in }, completed: {})
     }
-
 }

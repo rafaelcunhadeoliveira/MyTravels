@@ -38,15 +38,17 @@ class FlickerService {
         })
     }
 
-    func downloadPhoto(photoUrl: String, onCompleted completed: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
-        let url = NSURL(string: photoUrl)
-        let request = URLRequest(url: url! as URL)
-        
-        let session = URLSession.shared
-        let task = session.dataTask(with: request){ data, response, error in
-            completed(data, response, error)
-        }
-        task.resume()
+    func downloadPhoto(photoUrl: String,
+                       success: @escaping (Data?) -> Void,
+                       failure: @escaping (_ error: ServiceError) -> Void,
+                       completed: @escaping ()-> Void) {
+        ServiceManager.sharedInstance().request(url: photoUrl, method: .get,
+                                                success: { (data) in
+                                                    success(data)
+        }, failure: { (error) in
+            failure(error)
+        }, completion: {
+            completed()
+        })
     }
-    
 }

@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  Pin+CoreDataClass.swift
 //  OnTheMap
 //
 //  Created by Rafael Cunha on 26/09/2018.
