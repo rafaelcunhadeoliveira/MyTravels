@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="541.60000000000002" y="102.99850074962519"/>
         </scene>
-        <!--Location Images View Controller-->
+        <!--Photo Album View Controller-->
         <scene sceneID="DAp-py-gBa">
             <objects>
-                <viewController restorationIdentifier="LocationImagesViewController" storyboardIdentifier="LocationImagesViewController" id="lVh-8x-pBS" customClass="LocationImagesViewController" customModule="MyTravels" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PhotoAlbumViewController" storyboardIdentifier="PhotoAlbumViewController" id="lVh-8x-pBS" customClass="PhotoAlbumViewController" customModule="MyTravels" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Wy-T3-cco">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +124,7 @@
                                 </constraints>
                                 <state key="normal" title="New Collection"/>
                                 <connections>
-                                    <action selector="newCollectionButton:" destination="lVh-8x-pBS" eventType="touchUpInside" id="fHV-eK-hDi"/>
+                                    <action selector="btnNewCollection_Clicked:" destination="lVh-8x-pBS" eventType="touchUpInside" id="n44-Xa-2iB"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JW7-ny-SMr">
@@ -151,7 +151,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="06b-Xs-XzV" id="wPb-NH-T5U"/>
-                        <outlet property="topImage" destination="JW7-ny-SMr" id="lnP-Am-kSN"/>
+                        <outlet property="mapView" destination="JW7-ny-SMr" id="sOs-PN-Zch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtY-5R-Zn5" userLabel="First Responder" sceneMemberID="firstResponder"/>

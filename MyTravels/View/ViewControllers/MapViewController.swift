@@ -85,7 +85,7 @@ class MapViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
 
-    func addAnnotation(coordinate: CLLocationCoordinate2D, name: String) {
+    func addAnnotation(coordinate: CLLocationCoordinate2D) {
         
         let annotation = PinPointAnnotation()
         annotation.coordinate = coordinate
@@ -105,18 +105,32 @@ class MapViewController: UIViewController {
         map.addAnnotation(annotation)
     }
 
-    func getCityName(coordinate: CLLocationCoordinate2D) {
-        let geoCoder = CLGeocoder()
-        let location = CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        geoCoder.reverseGeocodeLocation(location, completionHandler:{(placemarks, _) in
-            guard let placemarks = placemarks,
-                  let location = placemarks.first,
-                  let name = location.name else {
-                    AlertHelper.shared.showBasicDialog(error: "Error searching location")
-                    return
+    func removeAnnotation(view: MKAnnotationView) {
+        view.removeFromSuperview()
+        guard let lat = view.annotation?.coordinate.latitude,
+            let lon = view.annotation?.coordinate.longitude else { return }
+        for pin in pins {
+            if pin.latitude == lat && pin.longitude == lon {
+                CoreDataStack.sharedInstance?.context.delete(pin)
+                CoreDataStack.sharedInstance?.save()
             }
-            self.addAnnotation(coordinate: coordinate, name: name)
-        })
+        }
+    }
+
+    func goFoward(mapView: MKMapView) {
+        guard let viewController = UIStoryboard(name: "Main",
+                                                bundle: nil).instantiateViewController(
+                                                    withIdentifier: "PhotoAlbumViewController")
+            as? PhotoAlbumViewController else { return }
+        
+        guard mapView.selectedAnnotations.count > 0,
+            let pin = mapView.selectedAnnotations[0] as? PinPointAnnotation else {
+                return
+        }
+        viewController.pointPin = pin
+        if let navigator = navigationController {
+            navigator.pushViewController(viewController, animated: true)
+        }
     }
 
     // MARK: Actions
@@ -130,7 +144,7 @@ class MapViewController: UIViewController {
         if !self.isEditing {
             let location = gestureReconizer.location(in: map)
             let coordinate = map.convert(location,toCoordinateFrom: map)
-            getCityName(coordinate: coordinate)
+            addAnnotation(coordinate: coordinate)
         }
     }
 }
@@ -138,21 +152,9 @@ class MapViewController: UIViewController {
 extension MapViewController : MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if isEditing {
-            view.removeFromSuperview()
+            removeAnnotation(view: view)
         } else {
-            guard let viewController = UIStoryboard(name: "Main",
-                                                    bundle: nil).instantiateViewController(
-                                                        withIdentifier: "LocationImagesViewController")
-                as? LocationImagesViewController else { return }
-            
-            guard mapView.selectedAnnotations.count > 0,
-                let pin = mapView.selectedAnnotations[0] as? PinPointAnnotation else {
-                return
-            }
-            viewController.pointPin = pin
-            if let navigator = navigationController {
-                navigator.pushViewController(viewController, animated: true)
-            }
+            goFoward(mapView: mapView)
         }
     }
 }

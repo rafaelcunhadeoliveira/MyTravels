@@ -1,6 +1,6 @@
 //
 //  CoreDataStack.swift
-//  OnTheMap
+//  MyTravels
 //
 //  Created by Rafael Cunha de Oliveira on 29/10/18.
 //  Copyright © 2018 Rafael Cunha. All rights reserved.

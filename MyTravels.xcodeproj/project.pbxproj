@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		530CC56C21A75ECD00E1BCE0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530CC56B21A75ECD00E1BCE0 /* CoreDataStack.swift */; };
+		530CC57221AC2B6000E1BCE0 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530CC57121AC2B6000E1BCE0 /* PhotoAlbumViewController.swift */; };
 		53175027218B9E7D002A87FB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53175026218B9E7D002A87FB /* LocationCollectionViewCell.swift */; };
-		531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */; };
 		537C76622195FACB00451965 /* FlickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C76612195FACB00451965 /* FlickerService.swift */; };
 		53A1F1A6219377D70024BDD1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1A5219377D70024BDD1 /* ServiceManager.swift */; };
 		53A1F1AC21937C520024BDD1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1F1A721937C520024BDD1 /* Enums.swift */; };
@@ -55,8 +55,8 @@
 
 /* Begin PBXFileReference section */
 		530CC56B21A75ECD00E1BCE0 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		530CC57121AC2B6000E1BCE0 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		53175026218B9E7D002A87FB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
-		531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationImagesViewController.swift; sourceTree = "<group>"; };
 		537C76612195FACB00451965 /* FlickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerService.swift; sourceTree = "<group>"; };
 		53A1F1A5219377D70024BDD1 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		53A1F1A721937C520024BDD1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 		9E27AD0A21895CBD00FFC5D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				530CC57121AC2B6000E1BCE0 /* PhotoAlbumViewController.swift */,
 				9E27AD0B21895DB600FFC5D2 /* MapViewController.swift */,
-				531BCC56218A5A7300E0BFBB /* LocationImagesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -396,6 +396,7 @@
 				9E27AD0C21895DB600FFC5D2 /* MapViewController.swift in Sources */,
 				9E3801E521A4A3C2001870FA /* Photo+CoreDataProperties.swift in Sources */,
 				53A1F1AC21937C520024BDD1 /* Enums.swift in Sources */,
+				530CC57221AC2B6000E1BCE0 /* PhotoAlbumViewController.swift in Sources */,
 				9EADEC4C21891C9F00E0D636 /* Loading.swift in Sources */,
 				53175027218B9E7D002A87FB /* LocationCollectionViewCell.swift in Sources */,
 				9E3801E621A4A3C2001870FA /* Pin+CoreDataClass.swift in Sources */,
@@ -405,7 +406,6 @@
 				9E3801E721A4A3C2001870FA /* Pin+CoreDataProperties.swift in Sources */,
 				9EADEC4E2189248500E0D636 /* ViewControllerExtension.swift in Sources */,
 				9EADEC1821891B0000E0D636 /* AppDelegate.swift in Sources */,
-				531BCC57218A5A7300E0BFBB /* LocationImagesViewController.swift in Sources */,
 				53A1F1AE21937C520024BDD1 /* EnvironmentVariables.swift in Sources */,
 				537C76622195FACB00451965 /* FlickerService.swift in Sources */,
 				53A1F1B021937C520024BDD1 /* ServiceError.swift in Sources */,

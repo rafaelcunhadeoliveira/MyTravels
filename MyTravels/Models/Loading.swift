@@ -23,7 +23,7 @@ public class Loading {
     public func showLoading() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let window = appDelegate.window {
-            configView(window: window, activate: true)
+            configView(window: window, activate: false)
             buildOverWindow(window: window)
             buildActivityIndicator()
             overView.addSubview(load)
@@ -35,14 +35,14 @@ public class Loading {
     public func hideLoading() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let window = appDelegate.window {
-            configView(window: window, activate: false)
+            configView(window: window, activate: true)
             load.stopAnimating()
             overView.removeFromSuperview()
         }
     }
 
     private func configView(window: UIWindow, activate: Bool) {
-        window.alpha = activate ? 0.7 : 1
+        window.alpha = activate ? 1 : 0.7
         window.isUserInteractionEnabled = activate
     }
 

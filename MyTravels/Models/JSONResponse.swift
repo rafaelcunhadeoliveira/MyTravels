@@ -1,6 +1,6 @@
 //
 //  JSONResponse.swift
-//  OnTheMap
+//  MyTravels
 //
 //  Created by Rafael Cunha on 10/10/2018.
 //  Copyright © 2018 Rafael Cunha. All rights reserved.

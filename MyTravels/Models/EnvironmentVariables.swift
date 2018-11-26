@@ -1,6 +1,6 @@
 //
 //  EnvironmentVariables.swift
-//  OnTheMap
+//  MyTravels
 //
 //  Created by Rafael Cunha on 09/10/2018.
 //  Copyright © 2018 Rafael Cunha. All rights reserved.

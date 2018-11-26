@@ -1,6 +1,6 @@
 //
 //  Pin+CoreDataProperties.swift
-//  OnTheMap
+//  MyTravels
 //
 //  Created by Rafael Cunha on 26/09/2018.
 //  Copyright © 2018 Rafael Cunha. All rights reserved.
