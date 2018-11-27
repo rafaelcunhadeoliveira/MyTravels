@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="541.60000000000002" y="102.99850074962519"/>
         </scene>
-        <!--Photo Album View Controller-->
+        <!--Album-->
         <scene sceneID="DAp-py-gBa">
             <objects>
                 <viewController restorationIdentifier="PhotoAlbumViewController" storyboardIdentifier="PhotoAlbumViewController" id="lVh-8x-pBS" customClass="PhotoAlbumViewController" customModule="MyTravels" customModuleProvider="target" sceneMemberID="viewController">
@@ -149,6 +149,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a8j-PN-3MM"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Album" id="NJo-L1-6ZI"/>
                     <connections>
                         <outlet property="collectionView" destination="06b-Xs-XzV" id="wPb-NH-T5U"/>
                         <outlet property="mapView" destination="JW7-ny-SMr" id="sOs-PN-Zch"/>
