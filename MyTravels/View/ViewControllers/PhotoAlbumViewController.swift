@@ -80,7 +80,7 @@ class PhotoAlbumViewController: UIViewController {
                                                                 }
         }, failure: {(error) in
             Loading.shared.hideLoading()
-            AlertHelper.shared.showBasicDialog(error: error.error ?? "Something went wrong")
+            AlertHelper.showGenericError()
         }, completed: {
             Loading.shared.hideLoading()
         })
@@ -89,7 +89,8 @@ class PhotoAlbumViewController: UIViewController {
     func getPhotosId(dict: [String: Any]) {
         
         guard (dict["stat"] as? String) == "ok", let photos = dict["photos"] as? [String: Any] else {
-            AlertHelper.shared.showBasicDialog(error: "Something went wrong")
+            Loading.shared.hideLoading()
+            AlertHelper.showGenericError()
             return
         }
         
@@ -147,25 +148,23 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
 
 extension PhotoAlbumViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: nil, message: "Are you sure you want to delete the image?", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { (action) in
-            let photo = (collectionView.cellForItem(at: indexPath) as! LocationCollectionViewCell).photo!
-            self.pointPin.pin!.removeFromPhoto(photo)
-            CoreDataStack.sharedInstance?.context.delete(photo)
-            self.photoList.remove(at: indexPath.row)
-            
-            DispatchQueue.main.async {
-                CoreDataStack.sharedInstance?.save()
-            }
-            
-            self.collectionView.reloadData()
-            
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
+        AlertHelper.show(message: "Are you sure you want to delete the image?",
+                         buttons: ["Confirm", "Cancel"], tapHandler: {(index) in
+                            if index == 0 {
+                                let photo = (collectionView.cellForItem(at: indexPath) as! LocationCollectionViewCell).photo!
+                                self.pointPin.pin!.removeFromPhoto(photo)
+                                CoreDataStack.sharedInstance?.context.delete(photo)
+                                self.photoList.remove(at: indexPath.row)
+                                
+                                DispatchQueue.main.async {
+                                    CoreDataStack.sharedInstance?.save()
+                                }
+                                
+                                self.collectionView.reloadData()
+                            } else {
+                                print("Canceled")
+                            }
+        })
     }
 }
 
