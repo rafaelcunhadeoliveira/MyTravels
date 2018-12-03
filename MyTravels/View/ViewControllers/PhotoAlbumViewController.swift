@@ -75,7 +75,8 @@ class PhotoAlbumViewController: UIViewController {
                                                             perPage: imagesPerPage, success:{ (responsePayload) in
                                                                 DispatchQueue.main.async {
                                                                     Loading.shared.hideLoading()
-                                                                    self.getPhotosId(dict: responsePayload)
+                                                                    let dict = JSONResponse.deserializePhotos(dict: responsePayload)
+                                                                    self.getPhotosId(photos: dict)
                                                                     self.collectionView.reloadData()
                                                                 }
         }, failure: {(error) in
@@ -86,13 +87,7 @@ class PhotoAlbumViewController: UIViewController {
         })
     }
     
-    func getPhotosId(dict: [String: Any]) {
-        
-        guard (dict["stat"] as? String) == "ok", let photos = dict["photos"] as? [String: Any] else {
-            Loading.shared.hideLoading()
-            AlertHelper.showGenericError()
-            return
-        }
+    func getPhotosId(photos: [String: Any]) {
         
         currentPage = photos["page"] as! Int
         numberOfPages = photos["pages"] as! Int

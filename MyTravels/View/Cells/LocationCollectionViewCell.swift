@@ -26,8 +26,7 @@ class LocationCollectionViewCell: UICollectionViewCell {
             if photo.isDownloading || photo.image == nil {
                 
                 DispatchQueue.main.async {
-                    Loading.shared.showLoading()
-                    self.image.image = nil
+                    self.image.image = UIImage.init(named: "placeholder")
                 }
                 
                 photo.downloadPhoto()
@@ -35,7 +34,6 @@ class LocationCollectionViewCell: UICollectionViewCell {
             } else {
                 
                 DispatchQueue.main.async {
-                    Loading.shared.hideLoading()
                     
                     guard let image = photo.downloadedImage else {
                         self.image.image = UIImage(data: photo.image! as Data)

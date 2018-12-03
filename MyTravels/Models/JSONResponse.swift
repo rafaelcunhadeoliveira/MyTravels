@@ -9,6 +9,14 @@
 import Foundation
 
 class JSONResponse {
+
+    class func deserializePhotos(dict: [String: Any]) -> [String : Any]{
+        guard (dict["stat"] as? String) == "ok", let photos = dict["photos"] as? [String: Any] else {
+            return[:]
+        }
+        return photos
+    }
+
     class func deserialize(data: Data) -> AnyObject {
         do {
             return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
