@@ -75,8 +75,7 @@ class PhotoAlbumViewController: UIViewController {
                                                             perPage: imagesPerPage, success:{ (responsePayload) in
                                                                 DispatchQueue.main.async {
                                                                     Loading.shared.hideLoading()
-                                                                    let dict = JSONResponse.deserializePhotos(dict: responsePayload)
-                                                                    self.getPhotosId(photos: dict)
+                                                                    self.photoList = JSONResponse.deserializePhotos(dict: responsePayload, pointPin: self.pointPin)
                                                                     self.collectionView.reloadData()
                                                                 }
         }, failure: {(error) in
