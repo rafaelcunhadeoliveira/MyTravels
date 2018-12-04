@@ -86,32 +86,6 @@ class PhotoAlbumViewController: UIViewController {
         })
     }
     
-    func getPhotosId(photos: [String: Any]) {
-        
-        currentPage = photos["page"] as! Int
-        numberOfPages = photos["pages"] as! Int
-        
-        guard let total = photos["total"] as? Int, total > 0 else {
-            return
-        }
-        
-        for item in photos["photo"] as! [[String: Any]] {
-            
-            if self.photoList.count == self.maxPhotosPerPage || self.photoList.count == total {
-                break
-            }
-            
-            
-            let photo = Photo(context: CoreDataStack.sharedInstance!.context)
-            photo.url = item["url_m"] as? String
-            photo.pin = self.pointPin.pin!
-            
-            self.photoList.append(photo)
-        }
-        
-        CoreDataStack.sharedInstance?.save()
-    }
-    
     // MARK: - Misc
     
     func setupMap() {
